@@ -29,13 +29,8 @@ export default function App() {
 
 
    console.log(formData)
+   console.log(checkPasswords())
    /**
-    * Challenge: Connect the form to local state
-    *
-    * 1. Create a state object to store the 4 values we need to save.
-    * 2. Create a single handleChange function that can
-    *    manage the state of all the inputs and set it up
-    *    correctly
     * 3. When the user clicks "Sign up", check if the
     *    password & confirmation match each other. If
     *    so, log "Successfully signed up" to the console.
@@ -45,9 +40,17 @@ export default function App() {
     *    up for our newsletter!" to the console.
     */
 
+   function checkPasswords(){
+         return formData.password === formData.confirmpassword
+   }
+
+
    function handleSubmit(event) {
       event.preventDefault();
+
    }
+
+
 
    return (
       <div className="form-container">
