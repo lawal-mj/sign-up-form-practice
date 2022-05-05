@@ -25,11 +25,6 @@ export default function App() {
 
 
 
-
-
-
-   console.log(formData)
-   console.log(checkPasswords())
    /**
     * 3. When the user clicks "Sign up", check if the
     *    password & confirmation match each other. If
@@ -47,6 +42,7 @@ export default function App() {
 
    function handleSubmit(event) {
       event.preventDefault();
+      console.log( checkPasswords() ? "Successfully signed up" : "passwords do not match")
 
    }
 
