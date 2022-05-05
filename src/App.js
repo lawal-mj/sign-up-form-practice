@@ -11,12 +11,12 @@ export default function App() {
       });
 
    function handleChange(event) {
-      const { name, type, value } = event.target;
+      const { name, type, value, checked } = event.target;
 
       setFormData(function (prevData) {
          return {
             ...prevData,
-            [name]: type === "checkbox" ? !prevData.isjoining : value
+            [name]: type === "checkbox" ? checked : value
          }
       })
    }
