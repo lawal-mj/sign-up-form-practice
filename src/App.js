@@ -1,9 +1,6 @@
 import React, { useState } from "react";
 
 export default function App() {
-
-
-
    const [formData, setFormData] = useState(
       {
          email: "",
@@ -14,7 +11,7 @@ export default function App() {
       });
 
    function handleChange(event) {
-      const { name, type , value} = event.target;
+      const { name, type, value } = event.target;
 
       setFormData(function (prevData) {
          return {
@@ -24,14 +21,12 @@ export default function App() {
       })
    }
 
-
    function handleSubmit(event) {
       event.preventDefault();
       console.log(formData.password === formData.confirmpassword ? "Successfully signed up" : "passwords do not match")
-      console.log(formData.isjoining === true ? "Thanks for signing up to our news letter" : "Consider signing")
+      console.log(formData.isjoining === true ? "Thanks for signing up to our news letter" : "Consider signing up man")
 
    }
-
 
 
    return (
