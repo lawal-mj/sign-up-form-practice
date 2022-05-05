@@ -2,15 +2,16 @@ import React, { useState } from "react";
 
 export default function App() {
 
-   const stuff = {
-      email: "",
-      password: "",
-      confirmpassword: "",
-      isjoining: true
 
-   }
 
-   const [formData, setFormData] = useState(stuff);
+   const [formData, setFormData] = useState(
+      {
+         email: "",
+         password: "",
+         confirmpassword: "",
+         isjoining: true
+
+      });
 
    function handleChange(event) {
       const target = event.target;
@@ -24,19 +25,10 @@ export default function App() {
    }
 
 
-
-   /**
-    * 4. Also when submitting the form, if the person checked
-    *    the "newsletter" checkbox, log "Thanks for signing
-    *    up for our newsletter!" to the console.
-    */
-
-
-
    function handleSubmit(event) {
       event.preventDefault();
-      console.log( formData.password === formData.confirmpassword ? "Successfully signed up" : "passwords do not match")
-      console.log( formData.isjoining === true ? "Thanks for signing up to our news letter" : "Consider signing")
+      console.log(formData.password === formData.confirmpassword ? "Successfully signed up" : "passwords do not match")
+      console.log(formData.isjoining === true ? "Thanks for signing up to our news letter" : "Consider signing")
 
    }
 
