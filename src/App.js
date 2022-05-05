@@ -5,7 +5,9 @@ export default function App() {
    const stuff = {
       email: "",
       password: "",
-      confirmpassword: ""
+      confirmpassword: "",
+      isjoining: true
+
    }
 
    const [formData, setFormData] = useState(stuff);
@@ -14,16 +16,19 @@ export default function App() {
       const target = event.target;
 
       setFormData(function (prevData) {
-            return {
-               ...prevData,
-               [target.name] : target.value
-            }
+         return {
+            ...prevData,
+            [target.name]: target.type === "checkbox" ? !prevData.isjoining : target.value
+         }
       })
    }
 
+
+
+
+
+
    console.log(formData)
-
-
    /**
     * Challenge: Connect the form to local state
     *
@@ -73,7 +78,13 @@ export default function App() {
             />
 
             <div className="form--marketing">
-               <input id="okayToEmail" type="checkbox" />
+               <input
+                  onChange={handleChange}
+                  name="isjoining"
+                  id="okayToEmail"
+                  type="checkbox"
+                  checked={formData.isjoining}
+               />
                <label htmlFor="okayToEmail">I want to join the newsletter</label>
             </div>
 
