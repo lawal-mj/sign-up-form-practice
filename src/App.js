@@ -35,14 +35,11 @@ export default function App() {
     *    up for our newsletter!" to the console.
     */
 
-   function checkPasswords(){
-         return formData.password === formData.confirmpassword
-   }
 
 
    function handleSubmit(event) {
       event.preventDefault();
-      console.log( checkPasswords() ? "Successfully signed up" : "passwords do not match")
+      console.log( formData.password === formData.confirmpassword ? "Successfully signed up" : "passwords do not match")
 
    }
 
