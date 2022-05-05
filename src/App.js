@@ -14,12 +14,12 @@ export default function App() {
       });
 
    function handleChange(event) {
-      const target = event.target;
+      const { name, type , value} = event.target;
 
       setFormData(function (prevData) {
          return {
             ...prevData,
-            [target.name]: target.type === "checkbox" ? !prevData.isjoining : target.value
+            [name]: type === "checkbox" ? !prevData.isjoining : value
          }
       })
    }
